@@ -10,57 +10,57 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-body{margin:0;background:#F3F5F7}
-a{color:#0B6B5D}a:hover{color:#084C42}
+body{margin:0;background:#FFFFFF}
+a{color:#C8102E}a:hover{color:#8E0B20}
 html{scroll-behavior:smooth}
 [hidden]{display:none !important}
 .ico{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.noise{fill:none;stroke:#B9C4D0;stroke-width:1.5}
+.noise{fill:none;stroke:#E3B5BA;stroke-width:1.5}
 @keyframes gateShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
 .shake{animation:gateShake .4s ease}
-#gate-code:focus{box-shadow:0 0 0 4px rgba(11,107,93,.18)}
-.slot-box{width:88px;height:88px;box-sizing:border-box;border-radius:16px;border:2px dashed #B9C4D0;background:#FFFFFF;color:#8A97A6;display:flex;align-items:center;justify-content:center;transition:all .25s}
-.slot-box.filled{border-color:#0B6B5D;background:#E3F1EE;color:#0B6B5D}
-.slot-box.hover{border-color:#0B6B5D;background:#F1F8F6}
-#piece{position:relative;z-index:5;width:88px;height:88px;border:none;border-radius:16px;background:#0B6B5D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;box-shadow:0 6px 16px rgba(14,27,43,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-#piece.dragging{cursor:grabbing;transition:none;box-shadow:0 18px 40px rgba(14,27,43,.35)}
+#gate-code:focus{box-shadow:0 0 0 4px rgba(200,16,46,.18)}
+.slot-box{width:88px;height:88px;box-sizing:border-box;border-radius:16px;border:2px dashed #E3B5BA;background:#FFFFFF;color:#A07479;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.slot-box.filled{border-color:#C8102E;background:#FDE8EA;color:#C8102E}
+.slot-box.hover{border-color:#C8102E;background:#FFF1F2}
+#piece{position:relative;z-index:5;width:88px;height:88px;border:none;border-radius:16px;background:#C8102E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;box-shadow:0 6px 16px rgba(80,10,20,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+#piece.dragging{cursor:grabbing;transition:none;box-shadow:0 18px 40px rgba(80,10,20,.35)}
 </style>
 </head>
 <body>
-<div style="font-family: Inter, system-ui, sans-serif; color: #0E1B2B; background: #F3F5F7; font-size: 16px; line-height: 1.6">
+<div style="font-family: Inter, system-ui, sans-serif; color: #1F1214; background: #FFFFFF; font-size: 16px; line-height: 1.6">
 
 <!-- ============ ACCESS GATE ============ -->
-<div id="gate" style="min-height: 100vh; background: #0E1B2B; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 20px; box-sizing: border-box; gap: 28px">
+<div id="gate" style="min-height: 100vh; background: #9B0D22; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 20px; box-sizing: border-box; gap: 28px">
   <div style="width: 100%; max-width: 520px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-    <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF">Sasihong H.<span style="color: #5FD1B9">.</span></div>
-    <div id="step-label" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A9B6C6">Step 1 of 2 · Identity validation</div>
+    <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF">Sasihong H.<span style="color: #FFD6DB">.</span></div>
+    <div id="step-label" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #F6CDD2">Step 1 of 2 · Identity validation</div>
   </div>
   <div style="width: 100%; max-width: 520px; display: flex; gap: 8px" aria-hidden="true">
-    <div style="flex: 1 1 0; height: 4px; border-radius: 4px; background: #5FD1B9"></div>
-    <div id="bar2" style="flex: 1 1 0; height: 4px; border-radius: 4px; background: #2E4560"></div>
+    <div style="flex: 1 1 0; height: 4px; border-radius: 4px; background: #FFD6DB"></div>
+    <div id="bar2" style="flex: 1 1 0; height: 4px; border-radius: 4px; background: #C9475A"></div>
   </div>
 
   <!-- STEP 1 -->
   <div id="step-code" style="width: 100%; max-width: 520px; background: #FFFFFF; border-radius: 20px; padding: 36px; box-sizing: border-box; box-shadow: 0 24px 60px rgba(0,0,0,0.35); display: flex; flex-direction: column; gap: 20px">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D">Access request · RG-00</div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E">Access request · RG-00</div>
     <div>
       <h1 style="margin: 0 0 8px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15; letter-spacing: -0.02em">Validate to enter</h1>
-      <p id="code-intro" style="margin: 0; color: #4A5868; font-size: 15px"></p>
+      <p id="code-intro" style="margin: 0; color: #6B4A4E; font-size: 15px"></p>
     </div>
     <div id="code-display-row" style="display: flex; gap: 12px; align-items: stretch">
-      <div id="code-display" role="img" style="flex: 1 1 auto; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 76px; border-radius: 12px; background: #EEF2F5; border: 1px solid #DDE3EA; user-select: none">
+      <div id="code-display" role="img" style="flex: 1 1 auto; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 76px; border-radius: 12px; background: #FDECEE; border: 1px solid #F0D3D6; user-select: none">
         <svg width="100%" height="100%" viewBox="0 0 300 76" preserveAspectRatio="none" style="position: absolute; inset: 0" aria-hidden="true"><path class="noise" d="M0 52 C60 20 110 70 170 34 S260 18 300 46"></path><path class="noise" d="M0 22 C70 48 140 8 200 44 S270 62 300 28"></path></svg>
         <div id="code-digits" style="position: relative; display: flex; gap: 10px" aria-hidden="true"></div>
       </div>
-      <button id="refresh-code" type="button" aria-label="Show a new code" style="flex: 0 0 56px; border-radius: 12px; border: 1px solid #DDE3EA; background: #FFFFFF; color: #0E1B2B; cursor: pointer; display: flex; align-items: center; justify-content: center">
+      <button id="refresh-code" type="button" aria-label="Show a new code" style="flex: 0 0 56px; border-radius: 12px; border: 1px solid #F0D3D6; background: #FFFFFF; color: #1F1214; cursor: pointer; display: flex; align-items: center; justify-content: center">
         <svg class="ico" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"></path><path d="M20 4v5h-5"></path></svg>
       </button>
     </div>
     <form id="code-form" style="display: flex; flex-direction: column; gap: 10px" novalidate>
       <label for="gate-code" style="font-weight: 600; font-size: 14px">Verification code</label>
       <div style="display: flex; flex-wrap: wrap; gap: 12px">
-        <input id="gate-code" type="text" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="••••••" style="flex: 1 1 200px; min-width: 0; min-height: 56px; box-sizing: border-box; padding: 0 18px; border-radius: 12px; border: 2px solid #CBD5DF; font-family: 'IBM Plex Mono', monospace; font-size: 26px; letter-spacing: 0.4em; color: #0E1B2B; background: #FFFFFF; outline: none">
-        <button type="submit" style="flex: 0 0 auto; min-height: 56px; padding: 0 28px; border: none; border-radius: 12px; background: #0B6B5D; color: #FFFFFF; font-family: Manrope, sans-serif; font-weight: 700; font-size: 16px; cursor: pointer">Validate</button>
+        <input id="gate-code" type="text" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="••••••" style="flex: 1 1 200px; min-width: 0; min-height: 56px; box-sizing: border-box; padding: 0 18px; border-radius: 12px; border: 2px solid #E8C2C6; font-family: 'IBM Plex Mono', monospace; font-size: 26px; letter-spacing: 0.4em; color: #1F1214; background: #FFFFFF; outline: none">
+        <button type="submit" style="flex: 0 0 auto; min-height: 56px; padding: 0 28px; border: none; border-radius: 12px; background: #C8102E; color: #FFFFFF; font-family: Manrope, sans-serif; font-weight: 700; font-size: 16px; cursor: pointer">Validate</button>
       </div>
       <div id="code-error" role="alert" style="min-height: 22px; font-size: 14px; color: #B42318"></div>
     </form>
@@ -68,14 +68,14 @@ html{scroll-behavior:smooth}
 
   <!-- STEP 2 -->
   <div id="step-human" hidden style="width: 100%; max-width: 520px; background: #FFFFFF; border-radius: 20px; padding: 36px; box-sizing: border-box; box-shadow: 0 24px 60px rgba(0,0,0,0.35); display: flex; flex-direction: column; gap: 22px">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D">Human check · RG-00b</div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E">Human check · RG-00b</div>
     <div>
       <h1 style="margin: 0 0 8px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15; letter-spacing: -0.02em">Prove you're human</h1>
-      <p style="margin: 0; color: #4A5868; font-size: 15px">Drag the <strong id="target-name" style="color: #0E1B2B"></strong> into its matching outline.</p>
+      <p style="margin: 0; color: #6B4A4E; font-size: 15px">Drag the <strong id="target-name" style="color: #1F1214"></strong> into its matching outline.</p>
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; padding: 18px; border-radius: 14px; background: #F3F5F7; border: 1px dashed #CBD5DF; min-height: 92px; box-sizing: border-box">
+    <div style="display: flex; justify-content: center; align-items: center; padding: 18px; border-radius: 14px; background: #FFFFFF; border: 1px dashed #E8C2C6; min-height: 92px; box-sizing: border-box">
       <button id="piece" type="button"></button>
-      <div id="verified" hidden style="display: flex; align-items: center; gap: 10px; color: #0B6B5D; font-family: Manrope, sans-serif; font-weight: 700; font-size: 18px">
+      <div id="verified" hidden style="display: flex; align-items: center; gap: 10px; color: #C8102E; font-family: Manrope, sans-serif; font-weight: 700; font-size: 18px">
         <svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
         Verified — welcome in
       </div>
@@ -84,59 +84,59 @@ html{scroll-behavior:smooth}
     <div id="human-error" role="alert" style="min-height: 22px; font-size: 14px; color: #B42318"></div>
   </div>
 
-  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A9B6C6; text-align: center; max-width: 520px">Portfolio · Product Manager, Risk &amp; Governance — even the front door has a control.</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #F6CDD2; text-align: center; max-width: 520px">Portfolio · Product Manager, Risk &amp; Governance — even the front door has a control.</div>
 </div>
 
 <!-- ============ SITE ============ -->
 <div id="site" hidden>
 <!-- NAV -->
-  <header style="background: #0E1B2B; border-bottom: 1px solid #22334A">
+  <header style="background: #9B0D22; border-bottom: 1px solid #B8283C">
     <nav style="max-width: 1180px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-      <a href="#top" style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF; text-decoration: none; letter-spacing: -0.01em">Sasihong H.<span style="color: #5FD1B9">.</span></a>
+      <a href="#top" style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF; text-decoration: none; letter-spacing: -0.01em">Sasihong H.<span style="color: #FFD6DB">.</span></a>
       <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
-        <a href="#fit" style="color: #C9D3DF; text-decoration: none; padding: 10px 0">01 Fit</a>
-        <a href="#experience" style="color: #C9D3DF; text-decoration: none; padding: 10px 0">02 Experience</a>
-        <a href="#approach" style="color: #C9D3DF; text-decoration: none; padding: 10px 0">03 Approach</a>
-        <a href="#toolkit" style="color: #C9D3DF; text-decoration: none; padding: 10px 0">04 Toolkit</a>
-        <a href="#contact" style="color: #C9D3DF; text-decoration: none; padding: 10px 0">05 Contact</a>
+        <a href="#fit" style="color: #FCE4E7; text-decoration: none; padding: 10px 0">01 Fit</a>
+        <a href="#experience" style="color: #FCE4E7; text-decoration: none; padding: 10px 0">02 Experience</a>
+        <a href="#approach" style="color: #FCE4E7; text-decoration: none; padding: 10px 0">03 Approach</a>
+        <a href="#toolkit" style="color: #FCE4E7; text-decoration: none; padding: 10px 0">04 Toolkit</a>
+        <a href="#contact" style="color: #FCE4E7; text-decoration: none; padding: 10px 0">05 Contact</a>
       </div>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="top" style="background: #0E1B2B; color: #FFFFFF">
+  <section id="top" style="background: #9B0D22; color: #FFFFFF">
     <div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-        <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; border: 1px solid #2E4560; border-radius: 999px; padding: 6px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C9D3DF">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #5FD1B9"></span>
+        <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; border: 1px solid #C9475A; border-radius: 999px; padding: 6px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FCE4E7">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #FFD6DB"></span>
           Candidate · Product Manager, Risk &amp; Governance
         </div>
-        <h1 style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.04; letter-spacing: -0.03em">Turning complex requirements into <span style="color: #5FD1B9">controlled, traceable</span> products.</h1>
-        <p style="margin: 0; max-width: 620px; font-size: 19px; line-height: 1.6; color: #C9D3DF">I'm Sasihong Hakrawee — a Senior Business &amp; System Analyst with 12 years in digital product delivery, including banking work for SCB Tech X and Krungthai Bank. I'm ready to take that discipline into owning products where risk, compliance and governance come first.</p>
+        <h1 style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.04; letter-spacing: -0.03em">Turning complex requirements into <span style="color: #FFD6DB">controlled, traceable</span> products.</h1>
+        <p style="margin: 0; max-width: 620px; font-size: 19px; line-height: 1.6; color: #FCE4E7">I'm Sasihong Hakrawee — a Senior Business &amp; System Analyst with 12 years in digital product delivery, including banking work for SCB Tech X and Krungthai Bank. I'm ready to take that discipline into owning products where risk, compliance and governance come first.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px">
-          <a href="#fit" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 10px; background: #5FD1B9; color: #0E1B2B; font-family: Manrope, sans-serif; font-weight: 700; font-size: 16px; text-decoration: none">Why I fit this role</a>
-          <a href="mailto:sasihong.hkw@gmail.com" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 10px; border: 1px solid #3A5372; color: #FFFFFF; font-family: Manrope, sans-serif; font-weight: 600; font-size: 16px; text-decoration: none">sasihong.hkw@gmail.com</a>
+          <a href="#fit" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 10px; background: #FFD6DB; color: #1F1214; font-family: Manrope, sans-serif; font-weight: 700; font-size: 16px; text-decoration: none">Why I fit this role</a>
+          <a href="mailto:sasihong.hkw@gmail.com" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 10px; border: 1px solid #E07A88; color: #FFFFFF; font-family: Manrope, sans-serif; font-weight: 600; font-size: 16px; text-decoration: none">sasihong.hkw@gmail.com</a>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid #22334A; margin-top: 12px; padding-top: 28px">
+        <div style="display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid #B8283C; margin-top: 12px; padding-top: 28px">
           <div style="flex: 1 1 160px; padding: 0 24px 16px 0">
             <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em">12 yrs</div>
-            <div style="font-size: 14px; color: #A9B6C6; margin-top: 8px">in digital product &amp; system delivery (2014–2026)</div>
+            <div style="font-size: 14px; color: #F6CDD2; margin-top: 8px">in digital product &amp; system delivery (2014–2026)</div>
           </div>
           <div style="flex: 1 1 160px; padding: 0 24px 16px 0">
             <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em">2 banks</div>
-            <div style="font-size: 14px; color: #A9B6C6; margin-top: 8px">SCB Tech X and Krungthai Bank (via Accenture)</div>
+            <div style="font-size: 14px; color: #F6CDD2; margin-top: 8px">SCB Tech X and Krungthai Bank (via Accenture)</div>
           </div>
           <div style="flex: 1 1 160px; padding: 0 24px 16px 0">
             <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em">M.Sc.</div>
-            <div style="font-size: 14px; color: #A9B6C6; margin-top: 8px">Software Engineering, KMUTT</div>
+            <div style="font-size: 14px; color: #F6CDD2; margin-top: 8px">Software Engineering, KMUTT</div>
           </div>
         </div>
       </div>
       <div style="flex: 1 1 300px; max-width: 400px; margin: 0 auto; position: relative">
-        <div style="position: absolute; inset: 20px -20px -20px 20px; border: 1px solid #5FD1B9; border-radius: 20px" aria-hidden="true"></div>
-        <img src="portrait.jpg" alt="Portrait of Sasihong Hakrawee" style="position: relative; display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 20px; background: #22334A">
-        <div style="position: relative; margin: -36px 16px 0; background: #FFFFFF; color: #0E1B2B; border-radius: 14px; padding: 16px 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.25); font-size: 14px; line-height: 1.5">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A5868; margin-bottom: 4px">Based in</div>
+        <div style="position: absolute; inset: 20px -20px -20px 20px; border: 1px solid #FFD6DB; border-radius: 20px" aria-hidden="true"></div>
+        <img src="portrait.jpg" alt="Portrait of Sasihong Hakrawee" style="position: relative; display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 20px; background: #B8283C">
+        <div style="position: relative; margin: -36px 16px 0; background: #FFFFFF; color: #1F1214; border-radius: 14px; padding: 16px 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.25); font-size: 14px; line-height: 1.5">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B4A4E; margin-bottom: 4px">Based in</div>
           <div style="font-weight: 600">Bangkok, Thailand · +66 95 389 9754</div>
         </div>
       </div>
@@ -144,9 +144,9 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- QUOTE -->
-  <section style="background: #FFFFFF; border-bottom: 1px solid #DDE3EA">
+  <section style="background: #FFFFFF; border-bottom: 1px solid #F0D3D6">
     <div style="max-width: 1180px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: baseline">
-      <div style="flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">My belief</div>
+      <div style="flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">My belief</div>
       <p style="flex: 1 1 520px; margin: 0; font-family: Manrope, sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -0.01em">“While AI possesses advanced capabilities, the success of any organization still relies on experts who can develop and collaborate effectively with AI — a skill set I bring to the table.”</p>
     </div>
   </section>
@@ -155,16 +155,16 @@ html{scroll-behavior:smooth}
   <section id="fit" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 48px">
     <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 40px">
       <div style="flex: 1 1 520px">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D; margin-bottom: 12px">01 — Fit register</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E; margin-bottom: 12px">01 — Fit register</div>
         <h2 style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">What a Risk &amp; Governance PM needs — and where I've already done it.</h2>
       </div>
-      <p style="flex: 1 1 320px; margin: 0; color: #4A5868; max-width: 420px">Laid out like a control register: each capability the role demands, mapped to evidence from my work history.</p>
+      <p style="flex: 1 1 320px; margin: 0; color: #6B4A4E; max-width: 420px">Laid out like a control register: each capability the role demands, mapped to evidence from my work history.</p>
     </div>
 
-    <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #DDE3EA; border-radius: 16px">
+    <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #F0D3D6; border-radius: 16px">
       <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px">
         <thead>
-          <tr style="background: #F7F9FA; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A5868">
+          <tr style="background: #FFF7F7; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B4A4E">
             <th style="padding: 16px 20px; font-weight: 500; width: 90px">Ref</th>
             <th style="padding: 16px 20px; font-weight: 500; width: 28%">Role capability</th>
             <th style="padding: 16px 20px; font-weight: 500">Evidence from my career</th>
@@ -172,41 +172,41 @@ html{scroll-behavior:smooth}
           </tr>
         </thead>
         <tbody>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-01</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-01</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Translate policy &amp; business needs into clear requirements</td>
-            <td style="padding: 20px; color: #2B3A4B">Gather and analyse business requirements, design solutions, screens and workflows, and write functional specification documents that teams build and test against.</td>
-            <td style="padding: 20px; color: #4A5868">SCB Tech X · 2022–2026</td>
+            <td style="padding: 20px; color: #3A2427">Gather and analyse business requirements, design solutions, screens and workflows, and write functional specification documents that teams build and test against.</td>
+            <td style="padding: 20px; color: #6B4A4E">SCB Tech X · 2022–2026</td>
           </tr>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-02</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-02</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Change &amp; release control</td>
-            <td style="padding: 20px; color: #2B3A4B">Managed technical deployment activities across teams and consolidated the deployment runbook and rollback runbook for a core banking client.</td>
-            <td style="padding: 20px; color: #4A5868">Accenture · Krungthai Bank · 2021</td>
+            <td style="padding: 20px; color: #3A2427">Managed technical deployment activities across teams and consolidated the deployment runbook and rollback runbook for a core banking client.</td>
+            <td style="padding: 20px; color: #6B4A4E">Accenture · Krungthai Bank · 2021</td>
           </tr>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-03</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-03</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Assurance &amp; testing before go-live</td>
-            <td style="padding: 20px; color: #2B3A4B">Wrote test cases and scripts, tracked defects to closure, tested across desktop and mobile, and ran UAT with real users — and still support UAT today.</td>
-            <td style="padding: 20px; color: #4A5868">True Digital · SCB Tech X</td>
+            <td style="padding: 20px; color: #3A2427">Wrote test cases and scripts, tracked defects to closure, tested across desktop and mobile, and ran UAT with real users — and still support UAT today.</td>
+            <td style="padding: 20px; color: #6B4A4E">True Digital · SCB Tech X</td>
           </tr>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-04</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-04</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Security &amp; availability awareness</td>
-            <td style="padding: 20px; color: #2B3A4B">Kept a national broadcaster's website available and secure, including fixing findings from penetration testing.</td>
-            <td style="padding: 20px; color: #4A5868">Mono Group · 2014–2016</td>
+            <td style="padding: 20px; color: #3A2427">Kept a national broadcaster's website available and secure, including fixing findings from penetration testing.</td>
+            <td style="padding: 20px; color: #6B4A4E">Mono Group · 2014–2016</td>
           </tr>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-05</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-05</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Monitoring through data &amp; reporting</td>
-            <td style="padding: 20px; color: #2B3A4B">Design dashboards and reports; work hands-on with SQL, Excel, Power BI and MySQL to turn data into decisions.</td>
-            <td style="padding: 20px; color: #4A5868">SCB Tech X · Skills</td>
+            <td style="padding: 20px; color: #3A2427">Design dashboards and reports; work hands-on with SQL, Excel, Power BI and MySQL to turn data into decisions.</td>
+            <td style="padding: 20px; color: #6B4A4E">SCB Tech X · Skills</td>
           </tr>
-          <tr style="border-top: 1px solid #E6EBF0; vertical-align: top">
-            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D">RG-06</td>
+          <tr style="border-top: 1px solid #F5E1E3; vertical-align: top">
+            <td style="padding: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E">RG-06</td>
             <td style="padding: 20px; font-family: Manrope, sans-serif; font-weight: 700">Stakeholder alignment in high-control environments</td>
-            <td style="padding: 20px; color: #2B3A4B">Facilitated between technical and non-technical teams in banking, and worked closely with the client and technicians on an Army project.</td>
-            <td style="padding: 20px; color: #4A5868">Accenture · Azure Computer</td>
+            <td style="padding: 20px; color: #3A2427">Facilitated between technical and non-technical teams in banking, and worked closely with the client and technicians on an Army project.</td>
+            <td style="padding: 20px; color: #6B4A4E">Accenture · Azure Computer</td>
           </tr>
         </tbody>
       </table>
@@ -215,20 +215,20 @@ html{scroll-behavior:smooth}
 
   <!-- EXPERIENCE -->
   <section id="experience" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D; margin-bottom: 12px">02 — Experience</div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E; margin-bottom: 12px">02 — Experience</div>
     <h2 style="margin: 0 0 48px; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">From webmaster to senior analyst in banking.</h2>
 
-    <div style="display: flex; flex-direction: column; border-left: 2px solid #CBD5DF; margin-left: 6px">
+    <div style="display: flex; flex-direction: column; border-left: 2px solid #E8C2C6; margin-left: 6px">
 
       <article style="position: relative; padding: 0 0 48px 36px">
-        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #0B6B5D; box-shadow: 0 0 0 4px #F3F5F7" aria-hidden="true"></span>
+        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #C8102E; box-shadow: 0 0 0 4px #FFFFFF" aria-hidden="true"></span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5868">Apr 2022 – Now</span>
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D; background: #E3F1EE; padding: 2px 10px; border-radius: 999px">Banking</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B4A4E">Apr 2022 – Now</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E; background: #FDE8EA; padding: 2px 10px; border-radius: 999px">Banking</span>
         </div>
         <h3 style="margin: 6px 0 2px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em">Senior Business &amp; System Analyst</h3>
-        <div style="color: #4A5868; margin-bottom: 14px">Extend IT Co., Ltd. — client: SCB Tech X</div>
-        <ul style="margin: 0; padding-left: 20px; color: #2B3A4B; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
+        <div style="color: #6B4A4E; margin-bottom: 14px">Extend IT Co., Ltd. — client: SCB Tech X</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A2427; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
           <li>Gather requirements, analyse business needs and design solutions</li>
           <li>Write functional specification documents; design screens and workflows</li>
           <li>Design and develop features; design dashboards and reports</li>
@@ -237,14 +237,14 @@ html{scroll-behavior:smooth}
       </article>
 
       <article style="position: relative; padding: 0 0 48px 36px">
-        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0B6B5D; box-sizing: border-box; box-shadow: 0 0 0 4px #F3F5F7" aria-hidden="true"></span>
+        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #C8102E; box-sizing: border-box; box-shadow: 0 0 0 4px #FFFFFF" aria-hidden="true"></span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5868">Jan 2022 – Mar 2022</span>
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D; background: #E3F1EE; padding: 2px 10px; border-radius: 999px">Public sector</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B4A4E">Jan 2022 – Mar 2022</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E; background: #FDE8EA; padding: 2px 10px; border-radius: 999px">Public sector</span>
         </div>
         <h3 style="margin: 6px 0 2px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em">Business Analyst</h3>
-        <div style="color: #4A5868; margin-bottom: 14px">Azure Computer — client site: Army</div>
-        <ul style="margin: 0; padding-left: 20px; color: #2B3A4B; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
+        <div style="color: #6B4A4E; margin-bottom: 14px">Azure Computer — client site: Army</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A2427; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
           <li>Requirements analysis, working closely with the client and technicians</li>
           <li>Designed wireframes and business solutions</li>
           <li>Wrote user stories and consolidated related documentation</li>
@@ -252,14 +252,14 @@ html{scroll-behavior:smooth}
       </article>
 
       <article style="position: relative; padding: 0 0 48px 36px">
-        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #0B6B5D; box-shadow: 0 0 0 4px #F3F5F7" aria-hidden="true"></span>
+        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #C8102E; box-shadow: 0 0 0 4px #FFFFFF" aria-hidden="true"></span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5868">Jan 2021 – Dec 2021</span>
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D; background: #E3F1EE; padding: 2px 10px; border-radius: 999px">Banking</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B4A4E">Jan 2021 – Dec 2021</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E; background: #FDE8EA; padding: 2px 10px; border-radius: 999px">Banking</span>
         </div>
         <h3 style="margin: 6px 0 2px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em">Deployment Analyst / Application Design</h3>
-        <div style="color: #4A5868; margin-bottom: 14px">Accenture — client: Krungthai Bank (KTB)</div>
-        <ul style="margin: 0; padding-left: 20px; color: #2B3A4B; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
+        <div style="color: #6B4A4E; margin-bottom: 14px">Accenture — client: Krungthai Bank (KTB)</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A2427; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
           <li>Coordinated technical and non-technical teams to align key deliverables</li>
           <li>Managed deployment activities so cross-functional teams worked efficiently</li>
           <li>Consolidated the deployment runbook and rollback runbook</li>
@@ -267,14 +267,14 @@ html{scroll-behavior:smooth}
       </article>
 
       <article style="position: relative; padding: 0 0 48px 36px">
-        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0B6B5D; box-sizing: border-box; box-shadow: 0 0 0 4px #F3F5F7" aria-hidden="true"></span>
+        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #C8102E; box-sizing: border-box; box-shadow: 0 0 0 4px #FFFFFF" aria-hidden="true"></span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5868">Apr 2016 – Dec 2020</span>
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D; background: #E3F1EE; padding: 2px 10px; border-radius: 999px">Consumer app</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B4A4E">Apr 2016 – Dec 2020</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E; background: #FDE8EA; padding: 2px 10px; border-radius: 999px">Consumer app</span>
         </div>
         <h3 style="margin: 6px 0 2px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em">Senior System Analyst · Software Tester</h3>
-        <div style="color: #4A5868; margin-bottom: 14px">True Digital Group — TrueID application</div>
-        <ul style="margin: 0; padding-left: 20px; color: #2B3A4B; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
+        <div style="color: #6B4A4E; margin-bottom: 14px">True Digital Group — TrueID application</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A2427; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
           <li>Designed flow diagrams and specifications; analysed business processes and solution options</li>
           <li>Provided requirements to back-end teams and tested their APIs</li>
           <li>Worked closely with the PO, developers, testers and end users</li>
@@ -284,14 +284,14 @@ html{scroll-behavior:smooth}
       </article>
 
       <article style="position: relative; padding: 0 0 8px 36px">
-        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0B6B5D; box-sizing: border-box; box-shadow: 0 0 0 4px #F3F5F7" aria-hidden="true"></span>
+        <span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 2px solid #C8102E; box-sizing: border-box; box-shadow: 0 0 0 4px #FFFFFF" aria-hidden="true"></span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5868">Apr 2014 – Mar 2016</span>
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0B6B5D; background: #E3F1EE; padding: 2px 10px; border-radius: 999px">Media</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6B4A4E">Apr 2014 – Mar 2016</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8102E; background: #FDE8EA; padding: 2px 10px; border-radius: 999px">Media</span>
         </div>
         <h3 style="margin: 6px 0 2px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em">Webmaster</h3>
-        <div style="color: #4A5868; margin-bottom: 14px">Mono Group — Mono29 Digital TV</div>
-        <ul style="margin: 0; padding-left: 20px; color: #2B3A4B; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
+        <div style="color: #6B4A4E; margin-bottom: 14px">Mono Group — Mono29 Digital TV</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A2427; display: flex; flex-direction: column; gap: 4px; max-width: 760px">
           <li>Kept the website available and secure, including fixing penetration-testing findings</li>
           <li>Debugged performance issues and drove continuous, measurable improvements</li>
           <li>Monitored statistics and analytics across the website and YouTube</li>
@@ -301,31 +301,31 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- APPROACH -->
-  <section id="approach" style="background: #0E1B2B; color: #FFFFFF">
+  <section id="approach" style="background: #9B0D22; color: #FFFFFF">
     <div style="max-width: 1180px; margin: 0 auto; padding: 96px 24px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5FD1B9; margin-bottom: 12px">03 — How I'd work as your PM</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB; margin-bottom: 12px">03 — How I'd work as your PM</div>
       <h2 style="margin: 0 0 16px; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em; max-width: 820px">Governance built into the product, not bolted on at the end.</h2>
-      <p style="margin: 0 0 48px; color: #C9D3DF; max-width: 680px">The same loop I've run as an analyst, now owned end to end as a product manager.</p>
+      <p style="margin: 0 0 48px; color: #FCE4E7; max-width: 680px">The same loop I've run as an analyst, now owned end to end as a product manager.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 16px">
-        <div style="flex: 1 1 240px; border: 1px solid #2E4560; border-radius: 16px; padding: 28px; background: #13243A">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5FD1B9">Step 1</div>
+        <div style="flex: 1 1 240px; border: 1px solid #C9475A; border-radius: 16px; padding: 28px; background: #870B1D">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB">Step 1</div>
           <h3 style="margin: 12px 0 8px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 21px">Understand the risk</h3>
-          <p style="margin: 0; color: #C9D3DF; font-size: 15px">Map regulations, policies and pain points with risk, compliance and business owners before writing a single story.</p>
+          <p style="margin: 0; color: #FCE4E7; font-size: 15px">Map regulations, policies and pain points with risk, compliance and business owners before writing a single story.</p>
         </div>
-        <div style="flex: 1 1 240px; border: 1px solid #2E4560; border-radius: 16px; padding: 28px; background: #13243A">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5FD1B9">Step 2</div>
+        <div style="flex: 1 1 240px; border: 1px solid #C9475A; border-radius: 16px; padding: 28px; background: #870B1D">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB">Step 2</div>
           <h3 style="margin: 12px 0 8px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 21px">Turn it into requirements</h3>
-          <p style="margin: 0; color: #C9D3DF; font-size: 15px">Write specs, flows and acceptance criteria where every control traces back to the rule it satisfies.</p>
+          <p style="margin: 0; color: #FCE4E7; font-size: 15px">Write specs, flows and acceptance criteria where every control traces back to the rule it satisfies.</p>
         </div>
-        <div style="flex: 1 1 240px; border: 1px solid #2E4560; border-radius: 16px; padding: 28px; background: #13243A">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5FD1B9">Step 3</div>
+        <div style="flex: 1 1 240px; border: 1px solid #C9475A; border-radius: 16px; padding: 28px; background: #870B1D">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB">Step 3</div>
           <h3 style="margin: 12px 0 8px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 21px">Release with control</h3>
-          <p style="margin: 0; color: #C9D3DF; font-size: 15px">UAT sign-off, deployment and rollback runbooks, clear owners — so every change is safe and auditable.</p>
+          <p style="margin: 0; color: #FCE4E7; font-size: 15px">UAT sign-off, deployment and rollback runbooks, clear owners — so every change is safe and auditable.</p>
         </div>
-        <div style="flex: 1 1 240px; border: 1px solid #2E4560; border-radius: 16px; padding: 28px; background: #13243A">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5FD1B9">Step 4</div>
+        <div style="flex: 1 1 240px; border: 1px solid #C9475A; border-radius: 16px; padding: 28px; background: #870B1D">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB">Step 4</div>
           <h3 style="margin: 12px 0 8px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 21px">Monitor &amp; improve</h3>
-          <p style="margin: 0; color: #C9D3DF; font-size: 15px">Dashboards that show control health and adoption, feeding the next iteration of the roadmap.</p>
+          <p style="margin: 0; color: #FCE4E7; font-size: 15px">Dashboards that show control health and adoption, feeding the next iteration of the roadmap.</p>
         </div>
       </div>
     </div>
@@ -333,49 +333,49 @@ html{scroll-behavior:smooth}
 
   <!-- TOOLKIT -->
   <section id="toolkit" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 72px">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0B6B5D; margin-bottom: 12px">04 — Toolkit &amp; education</div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C8102E; margin-bottom: 12px">04 — Toolkit &amp; education</div>
     <h2 style="margin: 0 0 40px; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Skills, tools and foundations.</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 16px">
-      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #DDE3EA; border-radius: 16px; padding: 28px">
+      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #F0D3D6; border-radius: 16px; padding: 28px">
         <h3 style="margin: 0 0 16px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 19px">Core skills</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Business analysis &amp; requirements</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Data analysis &amp; visualisation</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Process improvement</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Workflow optimisation</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Stakeholder management</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Agile / Scrum</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Business analysis &amp; requirements</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Data analysis &amp; visualisation</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Process improvement</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Workflow optimisation</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Stakeholder management</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Agile / Scrum</span>
         </div>
       </div>
-      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #DDE3EA; border-radius: 16px; padding: 28px">
+      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #F0D3D6; border-radius: 16px; padding: 28px">
         <h3 style="margin: 0 0 16px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 19px">Tools</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Jira</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Confluence</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Figma</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Draw.io · Visio</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">PlantUML</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">SQL · MySQL</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Power BI · Excel</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Postman</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Google Analytics · Firebase</span>
-          <span style="padding: 6px 12px; border-radius: 8px; background: #EEF2F5; font-size: 14px">Photoshop</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Jira</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Confluence</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Figma</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Draw.io · Visio</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">PlantUML</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">SQL · MySQL</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Power BI · Excel</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Postman</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Google Analytics · Firebase</span>
+          <span style="padding: 6px 12px; border-radius: 8px; background: #FDECEE; font-size: 14px">Photoshop</span>
         </div>
       </div>
-      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #DDE3EA; border-radius: 16px; padding: 28px">
+      <div style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #F0D3D6; border-radius: 16px; padding: 28px">
         <h3 style="margin: 0 0 16px; font-family: Manrope, sans-serif; font-weight: 700; font-size: 19px">Education</h3>
         <div style="display: flex; flex-direction: column; gap: 16px">
           <div>
             <div style="font-weight: 600">M.Sc. Software Engineering</div>
-            <div style="font-size: 14px; color: #4A5868">King Mongkut's University of Technology Thonburi · 2017 · GPA 3.15</div>
+            <div style="font-size: 14px; color: #6B4A4E">King Mongkut's University of Technology Thonburi · 2017 · GPA 3.15</div>
           </div>
           <div>
             <div style="font-weight: 600">B.Sc. Information Technology</div>
-            <div style="font-size: 14px; color: #4A5868">Rajamangala University of Technology Thanyaburi · 2014 · GPA 3.50</div>
+            <div style="font-size: 14px; color: #6B4A4E">Rajamangala University of Technology Thanyaburi · 2014 · GPA 3.50</div>
           </div>
           <div>
             <div style="font-weight: 600">Vocational Certificate, Computer Studies</div>
-            <div style="font-size: 14px; color: #4A5868">Siam Business Administration College · 2010 · GPA 3.80</div>
+            <div style="font-size: 14px; color: #6B4A4E">Siam Business Administration College · 2010 · GPA 3.80</div>
           </div>
         </div>
       </div>
@@ -384,18 +384,18 @@ html{scroll-behavior:smooth}
 
   <!-- CONTACT -->
   <section id="contact" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 96px">
-    <div style="background: #0B6B5D; color: #FFFFFF; border-radius: 24px; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+    <div style="background: #C8102E; color: #FFFFFF; border-radius: 24px; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
       <div style="flex: 1 1 480px">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #D5EEE8; margin-bottom: 12px">05 — Contact</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFD6DB; margin-bottom: 12px">05 — Contact</div>
         <h2 style="margin: 0 0 12px; font-family: Manrope, sans-serif; font-weight: 800; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.02em">Let's build products people can trust.</h2>
-        <p style="margin: 0; color: #E6F4F1; max-width: 520px">Thank you for your time. I'd welcome the chance to talk about how I can help your Risk &amp; Governance products move fast and stay in control.</p>
+        <p style="margin: 0; color: #FFE9EC; max-width: 520px">Thank you for your time. I'd welcome the chance to talk about how I can help your Risk &amp; Governance products move fast and stay in control.</p>
       </div>
       <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 12px">
-        <a href="mailto:sasihong.hkw@gmail.com" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 12px; background: #FFFFFF; color: #0E1B2B; font-family: Manrope, sans-serif; font-weight: 700; text-decoration: none">sasihong.hkw@gmail.com</a>
+        <a href="mailto:sasihong.hkw@gmail.com" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 12px; background: #FFFFFF; color: #1F1214; font-family: Manrope, sans-serif; font-weight: 700; text-decoration: none">sasihong.hkw@gmail.com</a>
         <a href="tel:+66953899754" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 12px; border: 1px solid #FFFFFF; color: #FFFFFF; font-family: Manrope, sans-serif; font-weight: 600; text-decoration: none">+66 95 389 9754</a>
       </div>
     </div>
-    <div style="margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A5868">
+    <div style="margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B4A4E">
       <span>Sasihong Hakrawee · Bangkok, Thailand</span>
       <span>Prepared for the Product Manager, Risk &amp; Governance interview · 2026</span>
     </div>
@@ -438,7 +438,7 @@ html{scroll-behavior:smooth}
   function newCode() {
     genCode = '';
     for (var i = 0; i < 6; i++) genCode += Math.floor(Math.random() * 10);
-    var colors = ['#0E1B2B', '#0B6B5D', '#1E3A5F', '#7C2D12', '#3B3F8F'];
+    var colors = ['#1F1214', '#C8102E', '#7A0E1C', '#3A2427', '#A3121F'];
     var wrap = $('code-digits'); wrap.innerHTML = '';
     genCode.split('').forEach(function (ch) {
       var s = document.createElement('span');
@@ -452,7 +452,7 @@ html{scroll-behavior:smooth}
   }
   newCode();
 
-  function setErr(msg) { err.textContent = msg; input.style.borderColor = msg ? '#B42318' : '#CBD5DF'; }
+  function setErr(msg) { err.textContent = msg; input.style.borderColor = msg ? '#B42318' : '#E8C2C6'; }
   input.addEventListener('input', function () { input.value = input.value.replace(/\D/g, '').slice(0, 6); setErr(''); });
   $('refresh-code').addEventListener('click', function () { newCode(); input.value = ''; setErr(''); input.focus(); });
 
@@ -484,7 +484,7 @@ html{scroll-behavior:smooth}
       var col = document.createElement('div');
       col.style.cssText = 'flex:1 1 88px;max-width:104px;display:flex;flex-direction:column;align-items:center;gap:8px';
       col.innerHTML = '<div class="slot-box" data-slot="' + it.id + '">' + svg(it.id) + '</div>' +
-        '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:#4A5868">' + it.name + '</span>';
+        '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:#6B4A4E">' + it.name + '</span>';
       slots.appendChild(col);
     });
   }
@@ -492,7 +492,7 @@ html{scroll-behavior:smooth}
   function goHuman() {
     card1.hidden = true; card2.hidden = false;
     $('step-label').textContent = 'Step 2 of 2 · Human check';
-    $('bar2').style.background = '#5FD1B9';
+    $('bar2').style.background = '#FFD6DB';
     fails = 0; newPuzzle(null);
   }
 
